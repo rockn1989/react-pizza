@@ -6,7 +6,7 @@ import { Home, Cart } from "./pages";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { setPizzas as setPizzasAction } from "./redux/actions/pizza";
-console.log(window.store);
+
 /* const App = () => {
   useEffect(() => {
     axios.get(`http://localhost:3000/db.json`).then(({ data }) => {
@@ -34,11 +34,12 @@ console.log(window.store);
 class App extends Component {
   componentDidMount() {
     axios.get(`http://localhost:3000/db.json`).then(({ data }) => {
-      this.props.dispatch(setPizzasAction(data.pizzas));
+      window.store.dispatch(setPizzasAction(data.pizzas));
     });
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="wrapper">
         <Header />

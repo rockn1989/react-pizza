@@ -4,7 +4,7 @@ const initialState = {
 };
 
 const pizzas = (state = initialState, action) => {
-  if (action.tye === "SET_PIZZAS") {
+  if (action.type === "SET_PIZZAS") {
     return {
       ...state,
       items: action.payload,
